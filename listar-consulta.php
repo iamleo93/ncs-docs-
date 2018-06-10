@@ -6,7 +6,7 @@
 	<head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>NCS</title>
+		<title>Neo Care System - NCS</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" >
 	</head>
@@ -40,42 +40,21 @@
 			</div>
 		</nav>
 <br>
-<h1>Listar Consulta</h1>
+<h1>Consulta Agendada</h1>
 <?php
 	$sql = "SELECT * FROM consulta";
 	
-	$result = $conn->query($sql);
+	$especialidade   = @$_REQUEST["especialidade_consulta"];
+	$dia             = @$_REQUEST["dia_consulta"];
+	$hora            = @$_REQUEST["hora_consulta"];
 	
-	$qtd = $result-> num_rows;
-	
-	if($qtd > 0){
-		print "<br>Encontrou <b>$qtd</b> resultado(s)";
-		print "<table class='table table-bordered table-striped table-hover'>";
-		print "<tr>";
-		print "<th>#</th>";
-		print "<th>Especialidade</th>";
-		print "<th>Dia</th>";
-		print "<th>Hora</th>";
-		print "<th>Ações</th>";
-		print "</tr>";
-		while($row = $result->fetch_assoc()){	
 			print "<tr>";
-			print "<td>".$row["id_consulta"]."</td>";
-			print "<td>".$row["especialidade_consulta"]."</td>";
-			print "<td>".$row["dia_consulta"]."</td>";
-			print "<td>".$row["hora_consulta"]."</td>";
-			print "<td>
-					
-					<button class='btn btn-success' onclick=\"location.href='listar-consulta.php?page=edit-consulta&id_consulta=".$row["id_consulta"]."';\"><i class='fa fa-edit'></i></button>
-					
-					<button class='btn btn-danger' onclick=\"location.href='listar-consulta.php?page=salvar-consulta&acao=excluir&id_consulta=".$row["id_consulta"]."';\"><i class='fa fa-trash'></i></button>
-					
-				   </td>";
+			print "<th>".$_REQUEST["especialidade_consulta"]."</td>";
+			print "<th>".$_REQUEST["dia_consulta"]."</td>";
+			print "<th>".$_REQUEST["hora_consulta"]."</td>";
 			print "</tr>";
-		}
-		print "</table>";
-	}else{
-		print "Não encontrou resultados";
-	}
+		
+
+	
 	
 ?>

@@ -6,7 +6,7 @@
 	<head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>NCS</title>
+		<title>Neo Care System - NCS</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" >
 	</head>
@@ -41,7 +41,7 @@
 		</nav>
 	
 <h1>Cadastrar Consulta</h1>
-<form action="salvar-consulta.php?page=salvar-consulta&acao=agendar" method="POST">
+<form action="listar-consulta.php?page=listar-consulta&acao=agendar" method="POST">
 	<div class="form-group">
 		
 	</div>
